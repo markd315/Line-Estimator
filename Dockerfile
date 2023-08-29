@@ -11,7 +11,9 @@ RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.d
     rm google-chrome-stable_current_amd64.deb
 
 
-RUN apt-get -yyy update && apt-get -yyy install java-1.8.0-amazon-corretto-jdk ghostscript
+# Add the "JAVA" ppa and install
+RUN add-apt-repository -yyy ppa:webupd8team/java && \
+    apt-get -yyy update && apt-get -yyy openjdk-8-jdk
 
 
 COPY requirements.txt requirements.txt
