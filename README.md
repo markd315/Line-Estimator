@@ -3,7 +3,7 @@
 
 ### How to run the webapp server
 ```commandline
-anvil-app-server --app LineEstimatorApp
+anvil-app-server --app LineEstimatorApp --port 6060
 ```
 
 There is even a cool webapp which can run in a docker container. Be sure to change the origin setting in the Dockerfile if you host it somewhere else.

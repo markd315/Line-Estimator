@@ -32,7 +32,7 @@ RUN useradd python
 RUN chown -R anvil:anvil /anvil-data
 USER anvil
 
-EXPOSE 3030
+EXPOSE 6060
 
-ENTRYPOINT ["anvil-app-server", "--data-dir", "/anvil-data", "--port", "3030", "--origin", "https://lines.zanzalaz.com"]
+ENTRYPOINT ["anvil-app-server", "--data-dir", "/anvil-data", "--port", "6060", "--origin", "https://lines.zanzalaz.com:6060"]
 CMD ["--app", "LineEstimatorApp"]
