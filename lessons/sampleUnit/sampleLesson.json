@@ -1,9 +1,0 @@
-{
-  "lessonName": "sampleLesson",
-  "childLessons": [
-    "nextUnit/firstLesson",
-    "sampleUnit/secondLesson"
-  ],
-  "type": "text",
-  "data": "Welcome to the first lesson in text format!"
-}

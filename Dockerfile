@@ -22,15 +22,12 @@ RUN anvil-app-server || true
 VOLUME /apps
 WORKDIR /apps
 
-COPY FinancialShitApp FinancialShitApp
+COPY LineEstimatorApp LineEstimatorApp
 RUN mkdir /anvil-data
-
-COPY lessons lessons
 
 RUN useradd anvil
 RUN useradd python
 RUN chown -R anvil:anvil /anvil-data
-RUN chmod -R 777 /apps/cached-box-scores
 USER anvil
 
 COPY __init__.py __init__.py
@@ -38,5 +35,5 @@ COPY __init__.py __init__.py
 
 EXPOSE 443
 
-ENTRYPOINT ["anvil-app-server", "--data-dir", "/anvil-data", "--port", "443", "--origin", "https://finance.zanzalaz.com"]
-CMD ["--app", "FinancialShitApp", "--google-client-id", "993595845237-q5llasdn2l27h6rk1p18rancmpf8gdhm.apps.googleusercontent.com", "--google-client-secret", "$GOOGLE_SECRET"]
+ENTRYPOINT ["anvil-app-server", "--data-dir", "/anvil-data", "--port", "443", "--origin", "https://lines.zanzalaz.com"]
+CMD ["--app", "LineEstimatorApp"]

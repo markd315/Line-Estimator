@@ -1,0 +1,24 @@
+dependencies: []
+package_name: LineEstimatorApp
+allow_embedding: false
+name: Line Estimator App
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox}
+metadata: {}
+startup_form: LineForm
+renamed: true
+db_schema:
+  - name: line_data
+    id: 2
+    python_name: line_data
+    columns:
+      f+sBlXoTQLc=:
+        name: party
+        type: string
+      E9e2ASS2uyU=:
+        name: people
+        type: number
+      Lk958fQHwJ0=:
+        name: time_taken
+        type: number
+    access: { python_name: line_data, server: full, client: none,
+              table_id: 2 }
