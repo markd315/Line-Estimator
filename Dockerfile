@@ -11,9 +11,7 @@ RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.d
     rm google-chrome-stable_current_amd64.deb
 
 
-# Add the "JAVA" ppa and install
-RUN add-apt-repository -yyy ppa:webupd8team/java && \
-    apt-get -yyy update && apt-get -yyy openjdk-8-jdk
+RUN apt-get -yyy update && apt-get -yyy install java-16-amazon-corretto-jdk
 
 
 COPY requirements.txt requirements.txt
@@ -32,7 +30,7 @@ RUN useradd python
 RUN chown -R anvil:anvil /anvil-data
 USER anvil
 
-EXPOSE 443
+EXPOSE 3030
 
-ENTRYPOINT ["anvil-app-server", "--data-dir", "/anvil-data", "--port", "443", "--origin", "https://lines.zanzalaz.com"]
+ENTRYPOINT ["anvil-app-server", "--data-dir", "/anvil-data", "--port", "3030", "--origin", "https://lines.zanzalaz.com"]
 CMD ["--app", "LineEstimatorApp"]

@@ -8,9 +8,7 @@ RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.d
     (dpkg -i google-chrome-stable_current_amd64.deb || apt install -y --fix-broken) && \
     rm google-chrome-stable_current_amd64.deb
 
-# Add the "JAVA" ppa and install
-RUN add-apt-repository -yyy ppa:webupd8team/java && \
-    apt-get -yyy update && apt-get -yyy openjdk-8-jdk
+RUN apt-get -yyy update && apt-get -yyy install java-16-amazon-corretto-jdk
 
 
 COPY requirements.txt requirements.txt
