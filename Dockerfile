@@ -30,9 +30,6 @@ RUN useradd python
 RUN chown -R anvil:anvil /anvil-data
 USER anvil
 
-COPY __init__.py __init__.py
-
-
 EXPOSE 443
 
 ENTRYPOINT ["anvil-app-server", "--data-dir", "/anvil-data", "--port", "443", "--origin", "https://lines.zanzalaz.com"]

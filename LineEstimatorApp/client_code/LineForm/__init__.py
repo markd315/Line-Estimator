@@ -9,10 +9,19 @@ class LineForm(HtmlPanel):
         self.html = '@theme:standard-page.html'
         self.content_panel = GridPanel()
         # Initialize components
-        self.txt_party = TextBox(placeholder="Enter Party")
+        # Initialize components
+        self.lbl_party = Label(text="Party ID:")
+        self.txt_party = TextBox(placeholder="Enter PartyID for your line")
+
+        self.lbl_people = Label(text="People in line when you joined the line:")
         self.txt_people = TextBox(placeholder="Enter People")
+
+        self.lbl_time_taken = Label(text="Time Taken for you to reach front:")
         self.txt_time_taken = TextBox(placeholder="Enter Time Taken")
+
+        self.lbl_current_people = Label(text="Current People in line for estimation:")
         self.txt_current_people = TextBox(placeholder="Enter Current People")
+
         self.btn_store_data = Button(text="Store Data")
         self.btn_estimate_time = Button(text="Estimate Time")
         self.lbl_estimate = Label()
@@ -22,14 +31,21 @@ class LineForm(HtmlPanel):
         self.btn_estimate_time.set_event_handler('click', self.btn_estimate_time_click)
 
         # Add components to form
+        self.add_component(self.lbl_party)
         self.add_component(self.txt_party)
+
+        self.add_component(self.lbl_people)
         self.add_component(self.txt_people)
+
+        self.add_component(self.lbl_time_taken)
         self.add_component(self.txt_time_taken)
+
         self.add_component(self.btn_store_data)
 
+        self.add_component(self.lbl_current_people)
         self.add_component(self.txt_current_people)
-        self.add_component(self.btn_estimate_time)
 
+        self.add_component(self.btn_estimate_time)
         self.add_component(self.lbl_estimate)
 
     def btn_store_data_click(self, **event_args):
