@@ -6,7 +6,12 @@
 anvil-app-server --app LineEstimatorApp --port 6060
 ```
 
-There is even a cool webapp which can run in a docker container. Be sure to change the origin setting in the Dockerfile if you host it somewhere else.
+Example url:
+localhost:6060/#?party=clean
+
+you can throw it in a qr code generator like https://www.qr-code-generator.com/
+
+which works nicely actually.
 
 # Local docker commands to build image
 ```commandline

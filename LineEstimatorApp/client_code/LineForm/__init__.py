@@ -6,12 +6,19 @@ class LineForm(HtmlPanel):
     def __init__(self, **properties):
         super().__init__()
         self.clear()
-        self.html = '@theme:standard-page.html'
+        self.html = "@theme:assets:standard-page.html"
         self.content_panel = GridPanel()
         # Initialize components
         # Initialize components
         self.lbl_party = Label(text="Party ID:")
-        self.txt_party = TextBox(placeholder="Enter PartyID for your line")
+        query_dict = get_url_hash()
+        print(query_dict)
+        if query_dict == '' or query_dict is None or query_dict["party"] is None:
+            initial_party = ''
+        else:
+            initial_party = query_dict["party"]
+
+        self.txt_party = TextBox(placeholder="Enter PartyID for your line", text=initial_party)
 
         self.lbl_people = Label(text="People in line when you joined the line:")
         self.txt_people = TextBox(placeholder="Enter People")

@@ -34,5 +34,5 @@ USER anvil
 
 EXPOSE 6060
 
-ENTRYPOINT ["anvil-app-server", "--data-dir", "/anvil-data", "--port", "6060", "--origin", "http://lines.zanzalaz.com:6060"]
+ENTRYPOINT ["anvil-app-server", "--data-dir", "/anvil-data", "--port", "6060"]
 CMD ["--app", "LineEstimatorApp"]
