@@ -27,6 +27,13 @@ def estimate_line_time(current_people, party):
 
     return f"Estimated time: {estimated_time} minutes"
 
+#http://your-anvil-app-url/_/api/query/{party}/{estimate}
+#http://gcp.zanzalaz.com:6060/_/api/query/{party}/{estimate}
+@anvil.server.http_endpoint('/query/:party/:estimate')
+def query_line_data(estimate, party):
+    results = estimate_line_time(estimate, party)
+    return {'estimate': results}
+
 
 # Unit Test
 class TestLineFunctions(unittest.TestCase):
